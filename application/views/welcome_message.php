@@ -38,6 +38,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<li>
 							<a class="ltc-outer-space" id="pl-undefined" onclick="scrollToTarget('#overons')">Over ons</a>
 						</li>
+						<li>
+							<a class="ltc-outer-space" id="pl-undefined">Login</a>
+						</li>
 					</ul>
 				</div>
 			</nav>
@@ -266,6 +269,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!-- Footer - overons END -->
 </div>
 <!-- Main container END -->
+
+<script src="javascript/blocs.min.js"></script>
+<script src="javascript/bootstrap.min.js"></script>
+<script src="javascript/formHandler.js"></script>
+<script src="javascript/jquery-2.1.0.min.js"></script>
 
 
 </body>
