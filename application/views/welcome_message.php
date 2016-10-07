@@ -8,10 +8,82 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/bootstrap.min.css">
 	<link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/style.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
 </head>
 <body>
+
+	<div id="modal" class="popupContainer" style="display:none;">
+	<header class="popupHeader">
+		<span class="header_title">Login</span>
+		<span class="modal_close"><i class="fa fa-times"></i></span>
+	</header>
+
+    <section class="popupBody">
+	<div class="social_login">
+	    <div class="action_btns">
+	        <div class="one_half">
+	            <a class="btn" href="#" id="login_form" name="login_form">Login</a>
+	        </div>
+
+	        <div class="one_half last">
+	            <a class="btn" href="#" id="register_form" name=
+	            "register_form">Sign up</a>
+	        </div>
+	    </div>
+	</div>
+	<div class="user_login">
+    <form>
+        <label>Email / Username</label> <input type="text"><br>
+        <label>Password</label> <input type="password"><br>
+
+        <div class="checkbox">
+            <input id="remember" type="checkbox"> <label for=
+            "remember">Remember me on this computer</label>
+        </div>
+
+        <div class="action_btns">
+            <div class="one_half">
+                <a class="btn back_btn" href="#">Back</a>
+            </div>
+
+            <div class="one_half last">
+                <a class="btn btn_red" href="#">Login</a>
+            </div>
+        </div>
+    </form>
+
+    <a class="forgot_password" href="#">Forgot password?</a>
+</div>
+
+
+<div class="user_register">
+    <form>
+        <label>Full Name</label> <input type="text"><br>
+        <label>Email Address</label> <input type="email"><br>
+        <label>Password</label> <input type="password"><br>
+
+        <div class="checkbox">
+            <input id="send_updates" type="checkbox"> <label for=
+            "send_updates">Send me occasional email updates</label>
+        </div>
+
+        <div class="action_btns">
+            <div class="one_half">
+                <a class="btn back_btn" href="#">Back</a>
+            </div>
+
+            <div class="one_half last">
+                <a class="btn btn_red" href="#">Register</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+    </section>
+</div>
+
 <!-- Main container -->
 <div class="page-container">
 
@@ -39,7 +111,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<a class="ltc-outer-space" id="pl-undefined" onclick="scrollToTarget('#overons')">Over ons</a>
 						</li>
 						<li>
-							<a class="ltc-outer-space" id="pl-undefined">Login</a>
+							 <a id="modal_trigger" href="#modal" class="ltc-outer-space">Login or register</a>
 						</li>
 					</ul>
 				</div>
@@ -270,10 +342,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 <!-- Main container END -->
 
+<script src="javascript/jquery-2.1.0.min.js"></script>
+<script src="javascript/jquery.leanModal.min.js"></script>
+<script src="javascript/signinup.js"></script>
 <script src="javascript/blocs.min.js"></script>
 <script src="javascript/bootstrap.min.js"></script>
 <script src="javascript/formHandler.js"></script>
-<script src="javascript/jquery-2.1.0.min.js"></script>
 
 
 </body>
