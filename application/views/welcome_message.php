@@ -1,31 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $this->load->database();
-if(isset($_POST['submit'])) {
-	$username = strip_tags($_POST['username']);
-	$password = strip_tags($_POST['password']);
-
-    $username = $db->real_escape_string($username);
-	$password = $db->real_escape_string($password);
-
-	$sql = "SELECT id, username, password FROM users WHERE username = '$username' AND password = '$password'";
-
-	$result = $db->query($sql);
-
-		if($result->num_rows == 1){
-		while($row = $result->fetch_object()){
-			session_start();
-			$_SESSION['id'] = $row->id;
-			$_SESSION['username'] = $row->username;
-
-			header('location: index.php');
-		}
-	}else{
-		$password = md5($password);
-		header('location: inloggen.php');
-	}
-
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
