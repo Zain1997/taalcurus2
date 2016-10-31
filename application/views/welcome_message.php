@@ -1,6 +1,33 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+$this->load->database();
+if(isset($_POST['submit'])) {
+	$username = strip_tags($_POST['username']);
+	$password = strip_tags($_POST['password']);
+
+    $username = $db->real_escape_string($username);
+	$password = $db->real_escape_string($password);
+
+	$sql = "SELECT id, username, password FROM users WHERE username = '$username' AND password = '$password'";
+
+	$result = $db->query($sql);
+
+		if($result->num_rows == 1){
+		while($row = $result->fetch_object()){
+			session_start();
+			$_SESSION['id'] = $row->id;
+			$_SESSION['username'] = $row->username;
+
+			header('location: index.php');
+		}
+	}else{
+		$password = md5($password);
+		header('location: inloggen.php');
+	}
+
+}
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -26,7 +53,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	        <div class="one_half">
 	            <a class="btn" href="#" id="login_form" name="login_form">Login</a>
 	        </div>
-
 	        <div class="one_half last">
 	            <a class="btn" href="#" id="register_form" name=
 	            "register_form">Sign up</a>
@@ -34,14 +60,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    </div>
 	</div>
 	<div class="user_login">
-    <form>
-        <label>Email / Username</label> <input type="text"><br>
-        <label>Password</label> <input type="password"><br>
-
-        <div class="checkbox">
-            <input id="remember" type="checkbox"> <label for=
-            "remember">Remember me on this computer</label>
-        </div>
+    <form method="post" action="">
+        <label>Email / Username</label> <input name="username" type="text"><br>
+        <label>Password</label> <input name="password" type="password"><br>
 
         <div class="action_btns">
             <div class="one_half">
@@ -63,11 +84,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <label>Full Name</label> <input type="text"><br>
         <label>Email Address</label> <input type="email"><br>
         <label>Password</label> <input type="password"><br>
-
-        <div class="checkbox">
-            <input id="send_updates" type="checkbox"> <label for=
-            "send_updates">Send me occasional email updates</label>
-        </div>
 
         <div class="action_btns">
             <div class="one_half">
