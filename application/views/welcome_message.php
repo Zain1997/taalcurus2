@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+$this->load->database();
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +12,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/style.css">
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-
 </head>
 <body>
 
