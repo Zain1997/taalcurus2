@@ -1,8 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $this->load->database();
-
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -12,6 +12,7 @@ $this->load->database();
 	<link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/style.css">
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -27,7 +28,6 @@ $this->load->database();
 	        <div class="one_half">
 	            <a class="btn" href="#" id="login_form" name="login_form">Login</a>
 	        </div>
-
 	        <div class="one_half last">
 	            <a class="btn" href="#" id="register_form" name=
 	            "register_form">Sign up</a>
@@ -35,14 +35,9 @@ $this->load->database();
 	    </div>
 	</div>
 	<div class="user_login">
-    <form>
-        <label>Email / Username</label> <input type="text"><br>
-        <label>Password</label> <input type="password"><br>
-
-        <div class="checkbox">
-            <input id="remember" type="checkbox"> <label for=
-            "remember">Remember me on this computer</label>
-        </div>
+    <form method="post" action="">
+        <label>Email / Username</label> <input name="username" type="text"><br>
+        <label>Password</label> <input name="password" type="password"><br>
 
         <div class="action_btns">
             <div class="one_half">
@@ -64,11 +59,6 @@ $this->load->database();
         <label>Full Name</label> <input type="text"><br>
         <label>Email Address</label> <input type="email"><br>
         <label>Password</label> <input type="password"><br>
-
-        <div class="checkbox">
-            <input id="send_updates" type="checkbox"> <label for=
-            "send_updates">Send me occasional email updates</label>
-        </div>
 
         <div class="action_btns">
             <div class="one_half">
